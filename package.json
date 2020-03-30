@@ -1,0 +1,23 @@
+{
+  "name": "2020typescriptcourse",
+  "version": "1.0.0",
+  "description": "typescript beginner course",
+  "main": "app.js",
+  "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benkio/2020TypescriptCourse.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benkio/2020TypescriptCourse/issues"
+  },
+  "homepage": "https://github.com/benkio/2020TypescriptCourse#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
