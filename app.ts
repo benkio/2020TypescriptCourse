@@ -1,26 +1,28 @@
-type Combinable = number | string;
-type ConversionDescriptor = "as-number" | "as-text";
-
-function combine(
-    input1: Combinable,
-    input2: Combinable,
-    resultConversion : ConversionDescriptor
-) {
-    let result;
-    if (typeof input1 === "number" &&
-        typeof input2 === "number" ||
-        resultConversion === "as-number"
-        ) {
-        result = +input1 + +input2;
-    } else {
-        result = input1.toString() + input2.toString();
-    }
-    return result;
+function add(n1: number, n2: number): number {
+    return n1 + n2;
 }
 
-const combineAges = combine(20, 23, "as-number");
-const combineStringAges = combine("20", "23", "as-number");
-const combineNames = combine("Max", "Anna", "as-text");
-console.log(combineAges);
-console.log(combineStringAges);
-console.log(combineNames);
+function printResult(num: number): void {
+    console.log("Result: " + num);
+}
+
+function addAndHandle(n1: number, n2: number, cb : (num: number) => void) {
+    const result = n1 + n2;
+    cb(result);
+}
+
+
+printResult(add(5,12));
+
+let combineValues : (a: number, b: number) => number;
+
+combineValues = add;
+// combineValues = printResult; now invalid
+// combineValues = 5;           now invalid
+
+console.log(combineValues(8, 8));
+addAndHandle(10, 20, (res : number) => {
+    console.log(res);
+})
+
+// let someValue: undefined; VALID
