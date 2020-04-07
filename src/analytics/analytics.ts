@@ -1,5 +1,9 @@
-const button = document.querySelector("button")!;
+let logged;
 
-button.addEventListener("click", () => {
-    console.log("Clicked!");
-});
+function sendAnalytics(data: string) {
+    console.log(data);
+    logged = true;
+    console.log(logged);
+}
+
+sendAnalytics("The Data");
